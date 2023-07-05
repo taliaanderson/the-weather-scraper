@@ -2,6 +2,8 @@ import config
 from datetime import timedelta, date
 import lxml.html as lh
 import requests
+import pandas as pd
+from dateutil.relativedelta import relativedelta
 
 
 class Utils:
@@ -14,15 +16,16 @@ class Utils:
         
     @classmethod
     def date_range_generator(cls, start, end = date.today()):
-        for i in range(int ((end - start).days) + 1):
-            yield start + timedelta(i)
+    month_list = pd.period_range(start=start, end=end, freq='M')
+    	for i in range(int(len(month_list))):
+            yield start + relativedelta(months=i)
 
     @classmethod
     def date_url_generator(cls, weather_station_url, start_date, end_date = date.today()):
         date_range = Utils.date_range_generator(start_date, end_date)
         for date in date_range:
             date_string = date.strftime("%Y-%m-%d")
-            url = f'{weather_station_url}/table/{date_string}/{date_string}/daily'
+            url = f'{weather_station_url}/table/{date_string}/{date_string}/monthly'
             yield date_string, url
     
     @classmethod
