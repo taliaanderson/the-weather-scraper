@@ -16,7 +16,7 @@ class Utils:
         
     @classmethod
     def date_range_generator(cls, start, end = date.today()):
-    month_list = pd.period_range(start=start, end=end, freq='M')
+    	month_list = pd.period_range(start=start, end=end, freq='M')
     	for i in range(int(len(month_list))):
             yield start + relativedelta(months=i)
 
