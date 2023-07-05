@@ -45,16 +45,28 @@ def scrap_station(weather_station_url):
     file_name = f'{station_name}.csv'
 
     with open(file_name, 'a+', newline='') as csvfile:
-        fieldnames = ['Date', 'Time',	'Temperature',	'Dew_Point',	'Humidity',	'Wind',	'Speed',	'Gust',	'Pressure',	'Precip_Rate',	'Precip_Accum',	'UV',   'Solar']
+        fieldnames = ['Date', 'Time','Temperature_High', 'Temperature_Avg', 'Temperature_Low', 
+                         'DewPoint_High', 'DewPoint_Avg', 'DewPoint_Low', 
+                         'Humidity_High', 'Humidity_Avg', 'Humidity_Low', 
+                         'WindSpeed_High', 'WindSpeed_Avg', 'WindSpeed_Low', 
+                         'Pressure_High', 'Pressure_Low', 'Precip_Sum']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         # Write the correct headers to the CSV file
         if UNIT_SYSTEM == "metric":
             # 12:04 AM	24.4 C	18.3 C	69 %	SW	0.0 km/h	0.0 km/h	1,013.88 hPa	0.00 mm	0.00 mm	0	0 w/m²
-            writer.writerow({'Date': 'Date', 'Time': 'Time',	'Temperature': 'Temperature_C',	'Dew_Point': 'Dew_Point_C',	'Humidity': 'Humidity_%',	'Wind': 'Wind',	'Speed': 'Speed_kmh',	'Gust': 'Gust_kmh',	'Pressure': 'Pressure_hPa',	'Precip_Rate': 'Precip_Rate_mm',	'Precip_Accum': 'Precip_Accum_mm',	'UV': 'UV',   'Solar': 'Solar_w/m2'})
+            writer.writerow({'Date': 'Date', 'Time': 'Time', 'Temperature_High': 'Temperature_High_C', 'Temperature_Avg':'Temperature_Avg_C', 'Temperature_Low':'Temperature_Low_C', 
+                         'DewPoint_High':'DewPoint_High_C', 'DewPoint_Avg':'DewPoint_Avg_C', 'DewPoint_Low': 'DewPoint_Low_C', 
+                         'Humidity_High':'Humidity_High', 'Humidity_Avg':'Humidity_Avg', 'Humidity_Low':'Humidity_Low', 
+                         'WindSpeed_High':'WindSpeed_High_kmh', 'WindSpeed_Avg_kmh':'WindSpeed_Avg_kmh', 'WindSpeed_Low':'WindSpeed_Low_kmh', 
+                         'Pressure_High':'Pressure_High_hPa', 'Pressure_Low':'Pressure_Low_hPa', 'Precip_Sum':'Precip_Sum_mm'})
         elif UNIT_SYSTEM == "imperial":
             # 12:04 AM	75.9 F	65.0 F	69 %	SW	0.0 mph	0.0 mph	29.94 in	0.00 in	0.00 in	0	0 w/m²
-            writer.writerow({'Date': 'Date', 'Time': 'Time',	'Temperature': 'Temperature_F',	'Dew_Point': 'Dew_Point_F',	'Humidity': 'Humidity_%',	'Wind': 'Wind',	'Speed': 'Speed_mph',	'Gust': 'Gust_mph',	'Pressure': 'Pressure_in',	'Precip_Rate': 'Precip_Rate_in',	'Precip_Accum': 'Precip_Accum_in',	'UV': 'UV',   'Solar': 'Solar_w/m2'})
+            writer.writerow({'Date': 'Date', 'Time': 'Time', 'Temperature_High': 'Temperature_High_F', 'Temperature_Avg':'Temperature_Avg_F', 'Temperature_Low':'Temperature_Low_F', 
+                         'DewPoint_High':'DewPoint_High_F', 'DewPoint_Avg':'DewPoint_Avg_F', 'DewPoint_Low': 'DewPoint_Low_F', 
+                         'Humidity_High':'Humidity_High', 'Humidity_Avg':'Humidity_Avg', 'Humidity_Low':'Humidity_Low', 
+                         'WindSpeed_High':'WindSpeed_High_mph', 'WindSpeed_Avg':'WindSpeed_Avg_mph', 'WindSpeed_Low':'WindSpeed_Low_mph', 
+                         'Pressure_High':'Pressure_High_in', 'Pressure_Low':'Pressure_Low_in', 'Precip_Sum':'Precip_Sum_in'})
         else:
             raise Exception("please set 'unit_system' to either \"metric\" or \"imperial\"! ")
 

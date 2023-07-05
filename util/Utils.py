@@ -60,8 +60,8 @@ class Utils:
 
             date_string_1 = date_arr[mid].strftime("%Y-%m-%d")
             date_string_2 = date_arr[mid - 1].strftime("%Y-%m-%d")
-            url_1 = f'{Utils.weather_station_url}/table/{date_string_1}/{date_string_1}/daily'
-            url_2 = f'{Utils.weather_station_url}/table/{date_string_2}/{date_string_2}/daily'
+            url_1 = f'{Utils.weather_station_url}/table/{date_string_1}/{date_string_1}/monthly'
+            url_2 = f'{Utils.weather_station_url}/table/{date_string_2}/{date_string_2}monthly'
             data_1 = Utils.fetch_data_table(url_1)
             data_2 = Utils.fetch_data_table(url_2)
 

@@ -113,28 +113,46 @@ class ConvertToSystem:
                     converted_dict['Date'] = value
                 if key == 'Time':
                     converted_dict['Time'] = value
-                if key ==  'Temperature':
-                    converted_dict['Temperature'] = self.temperature(value)
-                if key ==  'Dew_Point':
-                    converted_dict['Dew_Point'] = self.dew_point(value)
-                if key ==  'Humidity':
-                    converted_dict['Humidity'] = self.humidity(value)
-                if key ==  'Wind':
-                    converted_dict['Wind'] = value
-                if key ==  'Speed':
-                    converted_dict['Speed'] = self.speed(value)
-                if key ==  'Gust':
-                    converted_dict['Gust'] = self.speed(value)
-                if key ==  'Pressure':
-                    converted_dict['Pressure'] = self.pressure(value)
-                if key ==  'Precip_Rate':
-                    converted_dict['Precip_Rate'] = self.precipitation(value)
-                if key ==  'Precip_Accum':
-                    converted_dict['Precip_Accum'] = self.precipitation(value)
-                if key ==  'UV':
-                    converted_dict['UV'] = self.uv(value)
-                if key ==  'Solar':
-                    converted_dict['Solar'] = self.solar(value)
+                if key ==  'Temperature_High':
+                    converted_dict['Temperature_High'] = self.temperature(value)
+                if key ==  'Temperature_Avg':
+                    converted_dict['Temperature_Avg'] = self.temperature(value)
+                if key ==  'Temperature_Low':
+                    converted_dict['Temperature_Low'] = self.temperature(value)
+                if key ==  'Dew_Point_High':
+                    converted_dict['Dew_Point_High'] = self.dew_point(value)
+                if key ==  'Dew_Point_Avg':
+                    converted_dict['Dew_Point_Avg'] = self.dew_point(value)
+                if key ==  'Dew_Point_Low':
+                    converted_dict['Dew_Point_Low'] = self.dew_point(value)
+                if key ==  'Humidity_High':
+                    converted_dict['Humidity_High'] = self.humidity(value)
+                if key ==  'Humidity_Avg':
+                    converted_dict['Humidity_Avg'] = self.humidity(value)
+                if key ==  'Humidity_Low':
+                    converted_dict['Humidity_Low'] = self.humidity(value)
+                #if key ==  'Wind':
+                    #converted_dict['Wind'] = value
+                if key ==  'WindSpeed_High':
+                    converted_dict['WindSpeed_High'] = self.speed(value)
+                if key ==  'WindSpeed_Avg':
+                    converted_dict['WindSpeed_Avg'] = self.speed(value)
+                if key ==  'WindSpeed_Low':
+                    converted_dict['WindSpeed_Low'] = self.speed(value)
+                #if key ==  'Gust':
+                 #   converted_dict['Gust'] = self.speed(value)
+                if key ==  'Pressure_High':
+                    converted_dict['Pressure_High'] = self.pressure(value)
+                if key ==  'Pressure_Low':
+                    converted_dict['Pressure_Low'] = self.pressure(value)
+                #if key ==  'Precip_Rate':
+                 #   converted_dict['Precip_Rate'] = self.precipitation(value)
+                if key ==  'Precip_Sum':
+                    converted_dict['Precip_Sum'] = self.precipitation(value)
+                #if key ==  'UV':
+                 #   converted_dict['UV'] = self.uv(value)
+                #if key ==  'Solar':
+                 #   converted_dict['Solar'] = self.solar(value)
 
             converted_dict_list.append(converted_dict)
 
