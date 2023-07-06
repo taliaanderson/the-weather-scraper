@@ -14,24 +14,24 @@ from util.Utils import Utils
 # configuration
 stations_file = open('stations.txt', 'r')
 URLS = stations_file.readlines()
-# Date format: YYYY-MM-DD
-START_DATE = config.START_DATE
-END_DATE = config.END_DATE
-
-# set to "metric" or "imperial"
-UNIT_SYSTEM = config.UNIT_SYSTEM
-# find the first data entry automatically
-FIND_FIRST_DATE = config.FIND_FIRST_DATE
-
 
 def scrap_station(weather_station_url):
 
+    # Date format: YYYY-MM-DD
+    START_DATE = config.START_DATE
+    END_DATE = config.END_DATE
+    
+    # set to "metric" or "imperial"
+    UNIT_SYSTEM = config.UNIT_SYSTEM
+    # find the first data entry automatically
+    FIND_FIRST_DATE = config.FIND_FIRST_DATE
+
     session = requests.Session()
-    timeout = 5
-    global START_DATE
-    global END_DATE
-    global UNIT_SYSTEM
-    global FIND_FIRST_DATE
+    timeout = 15
+    #global START_DATE
+    #global END_DATE
+    #global UNIT_SYSTEM
+    #global FIND_FIRST_DATE
 
     if FIND_FIRST_DATE:
         # find first date
