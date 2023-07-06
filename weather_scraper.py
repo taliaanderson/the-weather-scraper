@@ -45,7 +45,7 @@ def scrap_station(weather_station_url):
     file_name = f'{station_name}.csv'
 
     with open(file_name, 'a+', newline='') as csvfile:
-        fieldnames = ['Date', 'Time','Temperature_High', 'Temperature_Avg', 'Temperature_Low', 
+        fieldnames = ['Date','Temperature_High', 'Temperature_Avg', 'Temperature_Low', 
                          'DewPoint_High', 'DewPoint_Avg', 'DewPoint_Low', 
                          'Humidity_High', 'Humidity_Avg', 'Humidity_Low', 
                          'WindSpeed_High', 'WindSpeed_Avg', 'WindSpeed_Low', 
@@ -55,14 +55,14 @@ def scrap_station(weather_station_url):
         # Write the correct headers to the CSV file
         if UNIT_SYSTEM == "metric":
             # 12:04 AM	24.4 C	18.3 C	69 %	SW	0.0 km/h	0.0 km/h	1,013.88 hPa	0.00 mm	0.00 mm	0	0 w/m²
-            writer.writerow({'Date': 'Date', 'Time': 'Time', 'Temperature_High': 'Temperature_High_C', 'Temperature_Avg':'Temperature_Avg_C', 'Temperature_Low':'Temperature_Low_C', 
+            writer.writerow({'Date': 'Date', 'Temperature_High': 'Temperature_High_C', 'Temperature_Avg':'Temperature_Avg_C', 'Temperature_Low':'Temperature_Low_C', 
                          'DewPoint_High':'DewPoint_High_C', 'DewPoint_Avg':'DewPoint_Avg_C', 'DewPoint_Low': 'DewPoint_Low_C', 
                          'Humidity_High':'Humidity_High', 'Humidity_Avg':'Humidity_Avg', 'Humidity_Low':'Humidity_Low', 
-                         'WindSpeed_High':'WindSpeed_High_kmh', 'WindSpeed_Avg_kmh':'WindSpeed_Avg_kmh', 'WindSpeed_Low':'WindSpeed_Low_kmh', 
+                         'WindSpeed_High':'WindSpeed_High_kmh', 'WindSpeed_Avg':'WindSpeed_Avg_kmh', 'WindSpeed_Low':'WindSpeed_Low_kmh', 
                          'Pressure_High':'Pressure_High_hPa', 'Pressure_Low':'Pressure_Low_hPa', 'Precip_Sum':'Precip_Sum_mm'})
         elif UNIT_SYSTEM == "imperial":
             # 12:04 AM	75.9 F	65.0 F	69 %	SW	0.0 mph	0.0 mph	29.94 in	0.00 in	0.00 in	0	0 w/m²
-            writer.writerow({'Date': 'Date', 'Time': 'Time', 'Temperature_High': 'Temperature_High_F', 'Temperature_Avg':'Temperature_Avg_F', 'Temperature_Low':'Temperature_Low_F', 
+            writer.writerow({'Date': 'Date','Temperature_High': 'Temperature_High_F', 'Temperature_Avg':'Temperature_Avg_F', 'Temperature_Low':'Temperature_Low_F', 
                          'DewPoint_High':'DewPoint_High_F', 'DewPoint_Avg':'DewPoint_Avg_F', 'DewPoint_Low': 'DewPoint_Low_F', 
                          'Humidity_High':'Humidity_High', 'Humidity_Avg':'Humidity_Avg', 'Humidity_Low':'Humidity_Low', 
                          'WindSpeed_High':'WindSpeed_High_mph', 'WindSpeed_Avg':'WindSpeed_Avg_mph', 'WindSpeed_Low':'WindSpeed_Low_mph', 

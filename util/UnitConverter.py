@@ -111,20 +111,20 @@ class ConvertToSystem:
             for key, value in dict.items():
                 if key == 'Date':
                     converted_dict['Date'] = value
-                if key == 'Time':
-                    converted_dict['Time'] = value
+                #if key == 'Time':
+                    #converted_dict['Time'] = value
                 if key ==  'Temperature_High':
                     converted_dict['Temperature_High'] = self.temperature(value)
                 if key ==  'Temperature_Avg':
                     converted_dict['Temperature_Avg'] = self.temperature(value)
                 if key ==  'Temperature_Low':
                     converted_dict['Temperature_Low'] = self.temperature(value)
-                if key ==  'Dew_Point_High':
-                    converted_dict['Dew_Point_High'] = self.dew_point(value)
-                if key ==  'Dew_Point_Avg':
-                    converted_dict['Dew_Point_Avg'] = self.dew_point(value)
-                if key ==  'Dew_Point_Low':
-                    converted_dict['Dew_Point_Low'] = self.dew_point(value)
+                if key ==  'DewPoint_High':
+                    converted_dict['DewPoint_High'] = self.dew_point(value)
+                if key ==  'DewPoint_Avg':
+                    converted_dict['DewPoint_Avg'] = self.dew_point(value)
+                if key ==  'DewPoint_Low':
+                    converted_dict['DewPoint_Low'] = self.dew_point(value)
                 if key ==  'Humidity_High':
                     converted_dict['Humidity_High'] = self.humidity(value)
                 if key ==  'Humidity_Avg':
