@@ -53,3 +53,6 @@ Wait until TWS finishes writing your data to files with this naming pattern ***s
 You resulting CSV file will look something like this (if you give it a nice format)  
 
 ![CSV example](https://raw.githubusercontent.com/Karlheinzniebuhr/the-weather-scraper/master/resources/csv.JPG)
+
+
+** Updates: Instead of sub-daily data, I have modified this code to scrape daily averages. 
